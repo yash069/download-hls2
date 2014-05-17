@@ -47,15 +47,16 @@ public class PlaylistDownloader {
     }
 
     public void download(String outfile, String key) throws IOException {
-        if(isLocal){
+        if( isLocal ){
 			LocalPlayList lp = new LocalPlayList(localPlayListFile);
 			playlist = lp.loadPlayList();
+			this.crypto = new Crypto(getBaseUrl(this.url), true);
 		}
 		else{
 			fetchPlaylist();
 			this.crypto = new Crypto(getBaseUrl(this.url), key);
 		}
-
+		
         for (String line : playlist) {
             line = line.trim();
 

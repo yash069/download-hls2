@@ -139,7 +139,7 @@ public class Main {
 				String localPlaylist = commandLine.getOptionValue(OPT_PLAYLIST);
 				File fp = new File(localPlaylist);
 				if( !fp.isFile() ){
-					System.out.println("File" + localPlaylist + "does exit or invalid file \nExample -file D:\\playlist.m3u8");
+					System.out.println("File " + localPlaylist + " does exit or invalid file. \nExample -file D:\\playlist.m3u8");
 					System.exit(1);
 				}
 			}
